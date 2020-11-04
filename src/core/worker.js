@@ -127,6 +127,7 @@ class WorkerMessageHandler {
       //              `hasOwnProperty` checks all over the code-base.
       const enumerableProperties = [];
       for (const property in []) {
+        if (property == '_super') continue
         enumerableProperties.push(property);
       }
       if (enumerableProperties.length) {

@@ -324,6 +324,7 @@ var ToUnicodeMap = (function ToUnicodeMapClosure() {
 
     forEach(callback) {
       for (var charCode in this._map) {
+        if (charCode == '_super') continue
         callback(charCode, this._map[charCode].charCodeAt(0));
       }
     },
@@ -353,6 +354,7 @@ var ToUnicodeMap = (function ToUnicodeMapClosure() {
 
     amend(map) {
       for (var charCode in map) {
+        if (charCode == '_super') continue
         this._map[charCode] = map[charCode];
       }
     },
